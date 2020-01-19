@@ -12,6 +12,7 @@ golem::add_module( name = "my_other_module" ) # Name of the module
 
 ## 2.2 Add dependencies
 usethis::use_dev_package("fullPage")
+usethis::use_package("cranly")
 
 ## 2.3 Add tests
 

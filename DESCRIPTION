@@ -1,0 +1,14 @@
+Package: hightlights.shiny
+Title: Highlights of the Shiny Community
+Version: 0.0.0.9000
+Authors@R: person('Eric', 'Nantz', email = 'thercast@gmail.com', role = c('cre', 'aut'))
+Description: Poster presented at rstudio::conf 2020.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    shiny, 
+    golem
+RoxygenNote: 6.1.0
+URL: https://github.com/rpodcast/highlights.shiny
+BugReports: https://github.com/rpodcast/highlights.shiny/issues

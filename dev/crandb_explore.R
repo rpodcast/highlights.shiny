@@ -102,7 +102,7 @@ scrape_pkg <- function(pkgname,
   return(res)
 }
 
-scrape_pkg("ABACUS")
+#scrape_pkg("ABACUS")
 
 # run function with purrr
 safely_scrape_pkg <- purrr::safely(scrape_pkg)

@@ -2,6 +2,7 @@
 
 export("%>%")
 export(run_app)
+import(fullPage)
 import(shiny)
 importFrom(golem,with_golem_options)
 importFrom(magrittr,"%>%")

@@ -24,8 +24,8 @@ stickers <- sticker_files %>%
   set_names(sticker_names)
 
 # Desired sticker resolution in pixels
-sticker_width <- 121
-#sticker_width <- 200
+#sticker_width <- 121
+sticker_width <- 200
 
 # Scale all stickers to the desired pixel width
 stickers <- stickers %>%
@@ -69,21 +69,53 @@ sticker_rows <- map2(row_lens, cumsum(row_lens),
 
 #sticker_rows[[1]]
 
+
+
+brightness <- 250
+saturation <- 140
+hue <- 100
+
+bg_image <- image_read("inst/app/www/img/blueprint.jpg") %>%
+  image_modulate(brightness = brightness,
+                 saturation = saturation,
+                 hue = hue) %>%
+  image_blur(radius = 10, sigma = 5)
+
+bg_image
+
 # Add stickers to canvas
 bg_color <- "aqua"
 bg_color <- "white"
-canvas <- image_blank(sticker_row_size*sticker_width, 
-                      sticker_height + (sticker_col_size-1)*sticker_height/1.33526,
+
+canvas <- image_blank(width = sticker_row_size*sticker_width, 
+                      height = sticker_height + (sticker_col_size-1)*sticker_height/1.33526,
                       color = bg_color)
 
+accumulate2(sticker_rows, seq_along(sticker_rows),
+        ~paste0("+", ((..3-1)%%2)*sticker_width/2,
+                "+", round((..3-1)*sticker_height/1.33526)),
+        .init = bg_image)
+
 hex_panel <- reduce2(sticker_rows, seq_along(sticker_rows), 
-        ~ image_composite(
-          ..1, ..2,
+        ~image_composite(
+          image = ..1, 
+          composite_image = ..2,
           offset = paste0("+", ((..3-1)%%2)*sticker_width/2,
                           "+", round((..3-1)*sticker_height/1.33526))
         ),
-        .init = canvas)
+        .init = bg_image)
 
+hex_panel2 <- accumulate2(sticker_rows, seq_along(sticker_rows), 
+                     ~image_composite(
+                       image = ..1, 
+                       composite_image = ..2,
+                       offset = paste0("+", ((..3-1)%%2)*sticker_width/2,
+                                       "+", round((..3-1)*sticker_height/1.33526))
+                     ),
+                     .init = bg_image)
+
+# was .init = canvas
+hex_panel2[[6]]
 hex_panel
 
 image_write(hex_panel, path = "inst/app/www/source_img/hex_panel.png", format = "png")

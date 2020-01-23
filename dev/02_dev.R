@@ -7,12 +7,21 @@
 
 ## 2.1 Add modules
 ## 
-golem::add_module( name = "my_first_module" ) # Name of the module
-golem::add_module( name = "my_other_module" ) # Name of the module
+golem::add_module( name = "welcome" ) # used for title page
+golem::add_module( name = "shiny_intro" ) # intro & background
 
 ## 2.2 Add dependencies
 usethis::use_dev_package("fullPage")
-usethis::use_package("cranly")
+usethis::use_package("cranly", type = "Suggests")
+usethis::use_package("cranlogs", type = "Suggests")
+usethis::use_package("rvest", type = "Suggests")
+usethis::use_package("polite", type = "Suggests")
+usethis::use_package("janitor", type = "Suggests")
+usethis::use_package("magick")
+usethis::use_package("purrr")
+usethis::use_package("dplyr")
+usethis::use_package("rlang")
+usethis::use_package("fs")
 usethis::use_pipe()
 
 ## 2.3 Add tests

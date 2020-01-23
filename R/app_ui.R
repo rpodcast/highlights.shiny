@@ -2,54 +2,57 @@
 #' @import fullPage
 app_ui <- function() {
   
+  sections.color = c(
+    "#C3F3EC"
+    # "#FE9199",
+    # "#FFADB2",
+    # "#FFCAB1",
+    # "#C3F3EC"
+  )
+  
+  # my_options <- list(
+  #   loopBottom = TRUE,
+  #   navigation = FALSE,
+  #   keyboardScrolling = TRUE
+  # )
+  
   my_options <- list(
     loopBottom = TRUE,
     navigation = TRUE,
-    keyboardScrolling = TRUE
+    keyboardScrolling = TRUE,
+    sectionsColor = sections.color
   )
-  
-  sections.color = c(
-    "#C3F3EC",
-    "#FE9199",
-    "#FFADB2",
-    "#FFCAB1",
-    "#C3F3EC"
-  )
-  
   
   tagList(
+
     # Leave this function for adding external resources
     #golem_add_external_resources(),
-    
-    # List the first level UI elements here 
-    pagePiling(
+
+    # List the first level UI elements here
+    fullPage(
       center = TRUE,
-      sections.color = sections.color,
       opts = my_options,
       menu = c(
-        "History" = "intro",
-        "Architect" = "dev",
-        "User Interface" = "ui_pkgs",
-        "User Experience" = "ux_pkgs",
-        "The Future" = "shiny_future"
+        "Welcome" = "intro"
+        # "Architect" = "dev",
+        # "User Interface" = "ui_pkgs",
+        # "User Experience" = "ux_pkgs",
+        # "The Future" = "shiny_future"
       ),
-      
-      pageTheme("aqua"),
-      
-      pageSection(
-        menu = "intro",
-        h1("Highlights of the Shiny Community!"),
-        h2("Eric Nantz"),
-        h2("Statistician / Podcaster / Shiny Enthusiest"),
-        h2("rstudio::conf 2020"),
-        br(),
-        br(),
-        pageContainer(
-          pageRow(
-            pageButtonTo(tags$p(fontawesome::fa("car", height = 12, fill = "forestgreen"), "Hello"), section = "intro")
-          )
-        )
-      )
+    
+    # pagePiling(
+    #   center = TRUE,
+    #   sections.color = sections.color,
+    #   opts = my_options,
+    #   menu = c(
+    #     "Welcome" = "intro"
+    #     # "Architect" = "dev",
+    #     # "User Interface" = "ui_pkgs",
+    #     # "User Experience" = "ux_pkgs",
+    #     # "The Future" = "shiny_future"
+    #   ),
+
+      mod_welcome_ui("welcome_ui_1")
     )
   )
 }

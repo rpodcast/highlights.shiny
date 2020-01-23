@@ -1,8 +1,9 @@
-devtools::load_all()
+# extract packages that import shiny and scrape all releases
+# produces two tidy data sets
 
-library(tidyverse)
+library(dplyr, warn.conflicts = FALSE)
+library(purrr)
 library(cranly)
-library(cranlogs)
 library(rvest)
 library(polite)
 library(janitor)
@@ -102,12 +103,28 @@ scrape_pkg <- function(pkgname,
   return(res)
 }
 
-#scrape_pkg("ABACUS")
-
 # run function with purrr
+# note: this will take quite a bit of time!
 safely_scrape_pkg <- purrr::safely(scrape_pkg)
 
 full_res <- purrr::map(shiny_pkg_list, ~safely_scrape_pkg(.x))
 
 saveRDS(full_res, file = "dev/full_res.rds")
 saveRDS(shiny_rev_db, file = "dev/shiny_rev_db.rds")
+
+# grab valid results
+df_list <- purrr::transpose(full_res)
+is_ok <- df_list$error %>% map_lgl(is_null)
+
+# assemble as a dataframe
+df <- flatten_df(full_res[is_ok])
+
+# merge with shiny_rev_db 
+shiny_rev_db <- shiny_rev_db %>%
+  left_join(df, by = "package") %>%
+  mutate(first_release_date = as.Date(first_release_date),
+         last_release_date = as.Date(last_release_date)) %>%
+  mutate(first_release_date = if_else(is.na(first_release_date), published, first_release_date)) %>%
+  mutate(last_release_date = if_else(is.na(last_release_date), published, last_release_date)) %>%
+  mutate(n_releases = if_else(is.na(n_releases), 1L, n_releases))
+

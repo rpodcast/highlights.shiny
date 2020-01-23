@@ -14,11 +14,21 @@ Imports:
     glue,
     htmltools,
     fullPage (>= 0.1.0),
-    cranly,
-    magrittr
+    magrittr,
+    magick,
+    purrr,
+    dplyr,
+    rlang,
+    fs
 RoxygenNote: 7.0.2
 URL: https://github.com/rpodcast/highlights.shiny
 BugReports: https://github.com/rpodcast/highlights.shiny/issues
 Remotes: 
     RinteRface/fullPage
 Roxygen: list(markdown = TRUE)
+Suggests: 
+    cranly,
+    cranlogs,
+    rvest,
+    polite,
+    janitor

@@ -53,6 +53,43 @@ mod_shiny_intro_ui <- function(id){
         p("Clearly the community around Shiny has grown immensely ..."),
         img(src = "https://media.giphy.com/media/9rhNvnUJCEQpa2xCj8/giphy.gif", style="width:800px;height:600px;"),
         h3("How can we keep up and discover these new packages, apps, and more?")
+      ),
+      fullSlide(
+        center = FALSE,
+        div(align = "center", h1("Straight to the source(s)")),
+        fullContainer(
+          fullRow(
+            fullColumn(
+              list_to_li(
+                c(
+                  "Shiny can get you going quickly to make powerful web apps ...",
+                  "But you can take your apps to a whole new level by tapping into the powerful packages created by this great community",
+                  "I wanted to connect with the authors behind these packages and share these ingrediants for my recipes!"
+                )
+              )
+            ),
+            fullColumn(
+              #https://media.giphy.com/media/dBNBKXIknaXNtK9lGQ/giphy.gif
+              img(src = "https://media.giphy.com/media/dBNBKXIknaXNtK9lGQ/giphy.gif", style="width:600px;height:400px;")
+            )
+          )
+        )
+      ),
+      fullSlide(
+        center = TRUE,
+        h1("Idea: Shiny Developer Series!"),
+        fullContainer(
+          fullRow(
+            fullColumn(
+              tags$iframe(src = "https://shinydevseries.com", height = 700, width = 900),
+              h3(tags$a(href = "https://shinydevseries.com", "shinydevseries.com"))
+            ),
+            fullColumn(
+              h2("Let's explore some of the awesome contributions from these brilliant authors and more!")
+            )
+          )
+        )
+        
       )
     )
   )

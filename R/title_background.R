@@ -16,7 +16,7 @@
 #' @import dplyr
 #' @importFrom rlang invoke
 #' @importFrom purrr map map2 reduce2 accumulate2 map_lgl set_names map_dbl
-title_background <- function(hex_path = system.file("app", "www", "img", package = "hightlights.shiny"),
+title_background <- function(hex_path = system.file("app", "www", "img", package = "highlights.shiny"),
                              #hex_path = "inst/app/www/img",
                              background_file = "blueprint.jpg",
                              sticker_width = 200,

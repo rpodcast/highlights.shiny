@@ -22,6 +22,9 @@ usethis::use_package("purrr")
 usethis::use_package("dplyr")
 usethis::use_package("rlang")
 usethis::use_package("fs")
+usethis::use_package("ggplot2")
+usethis::use_package("lubridate")
+usethis::use_package("waiter")
 usethis::use_pipe()
 
 ## 2.3 Add tests
@@ -41,7 +44,7 @@ golem::add_css_file( "custom" )
 # 3. Documentation
 
 ## 3.1 Vignette
-usethis::use_vignette("hightlights.shiny")
+usethis::use_vignette("highlights.shiny")
 devtools::build_vignettes()
 
 ## 3.2 Code coverage

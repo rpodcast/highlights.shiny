@@ -16,18 +16,24 @@
 #' @import fullPage
 mod_welcome_ui <- function(id){
   ns <- NS(id)
+  
+  text_style <- "color:#000000; font-weight: bold"
   tagList(
     
     # title page ----
     fullSectionPlot(
       outputId = ns("bg"),
       menu = "intro",
-      h1("Highlights of the Shiny Community!"),
-      h2("Eric Nantz"),
-      h2("Statistician / Podcaster / Shiny Enthusiest"),
-      h2("rstudio::conf 2020"),
-      br(),
-      br()
+      center = TRUE,
+      h1("Highlights from the Shiny Community!", style = text_style),
+      #h1("Highlights from the ", shiny::img(src = system.file("app", "www", "img", "shiny.png", package = "highlights.shiny"), alt = ""), "Community!"),
+      h2("Eric Nantz", style = text_style),
+      h2("Statistician / Podcaster / ", fontawesome::fa("r-project", fill = "stellblue"), "Enthusiast", style = text_style),
+      h2("rstudio::conf 2020", style = text_style),
+      rep_br(10),
+      h2(fontawesome::fa("microphone"), a(href = "https://r-podcast.org", "r-podcast.org"), style = "font-weight: bold"),
+      h2(fontawesome::fa("tv"), a(href = "https://shinydevseries.com", "shinydevseries.com"), style = "font-weight: bold"),
+      
     ),
     # pageSectionPlot(
     #   outputId = ns("bg"),
@@ -51,7 +57,11 @@ mod_welcome_ui <- function(id){
 mod_welcome_server <- function(input, output, session){
   ns <- session$ns
   
+  # establish waiter
+  w <- waiter::Waiter$new(id = ns("bg"))
+  
   output$bg <- renderImage({
+    w$show()
     tmpfile <- title_background(sticker_width = 400, 
                                 hex_scale_pct_width = 70, 
                                 hex_offset_vec = c(1200, 550)) %>%

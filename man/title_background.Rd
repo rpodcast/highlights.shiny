@@ -5,7 +5,7 @@
 \title{Create background for title page}
 \usage{
 title_background(
-  hex_path = system.file("app", "www", "img", package = "hightlights.shiny"),
+  hex_path = system.file("app", "www", "img", package = "highlights.shiny"),
   background_file = "blueprint.jpg",
   sticker_width = 200,
   sticker_row_size = 5,

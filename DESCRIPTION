@@ -1,4 +1,4 @@
-Package: hightlights.shiny
+Package: highlights.shiny
 Title: Highlights of the Shiny Community
 Version: 0.0.0.9000
 Authors@R: person('Eric', 'Nantz', email = 'thercast@gmail.com', role = c('cre', 'aut'))
@@ -19,7 +19,11 @@ Imports:
     purrr,
     dplyr,
     rlang,
-    fs
+    fs,
+    pkgload,
+    ggplot2,
+    lubridate,
+    waiter
 RoxygenNote: 7.0.2
 URL: https://github.com/rpodcast/highlights.shiny
 BugReports: https://github.com/rpodcast/highlights.shiny/issues

@@ -9,7 +9,7 @@
 ## Add information about the package that will contain your app
 
 golem::fill_desc(
-  pkg_name = "hightlights.shiny", # The Name of the package containing the App 
+  pkg_name = "highlights.shiny", # The Name of the package containing the App 
   pkg_title = "Highlights of the Shiny Community", # The Title of the package containing the App 
   pkg_description = "Poster presented at rstudio::conf 2020.", # The Description of the package containing the App 
   author_first_name = "Eric", # Your First Name

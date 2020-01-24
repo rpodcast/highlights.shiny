@@ -9,6 +9,7 @@
 ## 
 golem::add_module( name = "welcome" ) # used for title page
 golem::add_module( name = "shiny_intro" ) # intro & background
+golem::add_module( name = "architecture" ) # intro & background
 
 ## 2.2 Add dependencies
 usethis::use_dev_package("fullPage")

@@ -4,17 +4,12 @@ app_ui <- function() {
   
   sections.color = c(
     "#C3F3EC",
+    "#ccf2ff",
+    "#ccf2ff",
+    "#ccf2ff",
+    "#ccf2ff",
     "#ccf2ff"
-    # "#FFADB2",
-    # "#FFCAB1",
-    # "#C3F3EC"
   )
-  
-  # my_options <- list(
-  #   loopBottom = TRUE,
-  #   navigation = FALSE,
-  #   keyboardScrolling = TRUE
-  # )
   
   my_options <- list(
     loopBottom = TRUE,
@@ -26,7 +21,7 @@ app_ui <- function() {
   tagList(
 
     # Leave this function for adding external resources
-    #golem_add_external_resources(),
+    golem_add_external_resources(),
 
     # List the first level UI elements here
     fullPage(
@@ -34,11 +29,11 @@ app_ui <- function() {
       opts = my_options,
       menu = c(
         "Welcome" = "intro",
-        "Discovery" = "discover"
-        # "Architect" = "dev",
-        # "User Interface" = "ui_pkgs",
-        # "User Experience" = "ux_pkgs",
-        # "The Future" = "shiny_future"
+        "Discovery" = "discover",
+        "Architecture" = "dev",
+        "UI/UX" = "ui_ux",
+        "Extending" = "extend",
+        "The Future" = "shiny_future"
       ),
     
       mod_welcome_ui("welcome_ui_1"),

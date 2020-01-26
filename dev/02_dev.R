@@ -9,7 +9,8 @@
 ## 
 golem::add_module( name = "welcome" ) # used for title page
 golem::add_module( name = "shiny_intro" ) # intro & background
-golem::add_module( name = "architecture" ) # intro & background
+golem::add_module( name = "architecture" ) # architecture & workflow
+golem::add_module( name = "ui_ux") # user interfaces & user experience
 
 ## 2.2 Add dependencies
 usethis::use_dev_package("fullPage")
@@ -26,6 +27,7 @@ usethis::use_package("fs")
 usethis::use_package("ggplot2")
 usethis::use_package("lubridate")
 usethis::use_package("waiter")
+usethis::use_package("shinyFeedback")
 usethis::use_pipe()
 
 ## 2.3 Add tests

@@ -71,7 +71,23 @@ mod_architecture_ui <- function(id) {
       # tidymodules ----
       fullSlide(
         center = FALSE,
-        div(align = "center", h1("Announcing tidymodules!", style = text_style))
+        div(align = "center", h1("Announcing tidymodules!", style = text_style)),
+        fullContainer(
+          center = FALSE,
+          fullRow(
+            fullColumn(
+              h4("{tidymodules} builds upon shiny modules using R6 to provide a new object-oriented programming (OOP) approach for module development:"),
+              list_to_li(
+                c(
+                  "New module interface using input/output ports",
+                  "Tidy operators for handling cross-module communication"
+                )
+              ),
+              shiny::tableOutput(ns("tidymodules_features"))
+            )
+            
+          )
+        )
         # TODO: polish
         # https://github.com/Novartis/tidymodules
         # https://tidymodules.shinyapps.io/1_simple_addition/
@@ -90,6 +106,22 @@ mod_architecture_ui <- function(id) {
     
 mod_architecture_server <- function(input, output, session){
   ns <- session$ns
+  
+  output$tidymodules_features <- shiny::renderTable({
+    df <- tibble::tribble(
+      ~Feature, ~tidymodules, ~`conventional modules`,
+      "Programming Style", "R6 OOP", "Functional",
+      "Namespace Management", "Automatic/generated<br>Group<br>ID-based lookup", "User manually defines & matches namespace ID between UI and server",
+      "Module Communication", "New input/output port structure inside modules\nConnecting ports using tidy operators\nAutomatic network diagram", "functional parameters passing in callModule()\nChallenging to manage complex applications with many modules",
+      "Inheritance", "Class inheritance\nPort inheritance for nested modules", "NA",
+      "Session management", "Multiple strategies for managing shiny user sessions\nCaching of modules", "NA"
+    )
+    
+    as.data.frame(df)
+  },
+  striped = TRUE,
+  type = "html"
+  )
 }
     
 ## To be copied in the UI

@@ -30,6 +30,8 @@ usethis::use_package("waiter")
 usethis::use_package("shinyFeedback")
 usethis::use_pipe()
 
+usethis::use_package("shinyhelper")
+shinyhelper::create_help_files(c("demohelp"), help_dir = "inst/app/www")
 ## 2.3 Add tests
 
 usethis::use_test( "app" )

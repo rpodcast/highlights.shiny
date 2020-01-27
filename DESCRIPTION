@@ -24,7 +24,8 @@ Imports:
     ggplot2,
     lubridate,
     waiter,
-    shinyFeedback
+    shinyFeedback,
+    shinyhelper
 RoxygenNote: 7.0.2
 URL: https://github.com/rpodcast/highlights.shiny
 BugReports: https://github.com/rpodcast/highlights.shiny/issues

@@ -24,6 +24,7 @@ mod_ui_ux_ui <- function(id){
   text_style <- "font-weight: bold"
   
   tagList(
+    shinyFeedback::useShinyFeedback(),
     fullSection(
       menu = "ui_ux",
       center = FALSE,
@@ -78,14 +79,11 @@ mod_ui_ux_ui <- function(id){
           center = FALSE,
           fullRow(
             fullColumn(
-              textInput(
-                ns("text_feedback"),
-                label = "Try typing a bunch of letters here",
-                value = "",
-                placeholder = "Go ahead!"
-              ),
-              
-              
+              numericInput(
+                ns("exampleInput"),
+                "Show Feedback When < 0",
+                value = 3
+              )
             )
           )
         )
@@ -109,12 +107,15 @@ mod_ui_ux_server <- function(input, output, session){
   })
   
   # TODO figure out why it is not working
-  observeEvent(input$text_feedback, {
-    message(glue::glue("string length is {x}", x = text_length()))
-    message(text_length() > 10)
-    feedbackDanger(
-      ns("text_feedback"),
-      condition = text_length() > 10
+  observeEvent(input$exampleInput, {
+    ns <- session$ns
+    message("hi")
+    feedback(
+      ns("exampleInput"),
+      condition = input$exampleInput < 0,
+      text = "I am negative",
+      color = "#d9534f",
+      icon = shiny::icon("exclamation-sign", lib="glyphicon")
     )
   })
 }

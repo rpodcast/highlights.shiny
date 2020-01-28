@@ -20,3 +20,11 @@ golem::add_dockerfile_shinyproxy()
 
 ## 5.2 If you want to deploy to Heroku
 golem::add_dockerfile_heroku()
+
+# deployment
+rsconnect::deployApp(
+  account = "rpodcast",
+  appName = "highlights-shiny",
+  appFileManifest = "dev/app_manifest.txt",
+  launch.browser = FALSE
+)

@@ -3,6 +3,8 @@
 export("%>%")
 export(mod_architecture_server)
 export(mod_architecture_ui)
+export(mod_future_server)
+export(mod_future_ui)
 export(mod_shiny_intro_server)
 export(mod_shiny_intro_ui)
 export(mod_ui_ux_server)

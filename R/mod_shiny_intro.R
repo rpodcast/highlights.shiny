@@ -19,8 +19,6 @@
 mod_shiny_intro_ui <- function(id){
   ns <- NS(id)
   
-
-  
   tagList(
     fullSection(
       menu = "discover",

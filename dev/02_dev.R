@@ -11,6 +11,7 @@ golem::add_module( name = "welcome" ) # used for title page
 golem::add_module( name = "shiny_intro" ) # intro & background
 golem::add_module( name = "architecture" ) # architecture & workflow
 golem::add_module( name = "ui_ux") # user interfaces & user experience
+golem::add_module( name = "future") # future & calls to action
 
 ## 2.2 Add dependencies
 usethis::use_dev_package("fullPage")

@@ -37,7 +37,8 @@ app_ui <- function() {
       mod_welcome_ui("welcome_ui_1"),
       mod_shiny_intro_ui("shiny_intro_ui_1"),
       mod_architecture_ui("architecture_ui_1"),
-      mod_ui_ux_ui("ui_ux_ui_1")
+      mod_ui_ux_ui("ui_ux_ui_1"),
+      mod_future_ui("future_ui_1")
     )
   )
 }

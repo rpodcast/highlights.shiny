@@ -12,4 +12,5 @@ app_server <- function(input, output,session) {
   callModule(mod_shiny_intro_server, "shiny_intro_ui_1")
   callModule(mod_architecture_server, "architecture_ui_1")
   callModule(mod_ui_ux_server, "ui_ux_ui_1")
+  callModule(mod_future_server, "future_ui_1")
 }

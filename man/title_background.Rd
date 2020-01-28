@@ -6,23 +6,30 @@
 \usage{
 title_background(
   hex_path = system.file("app", "www", "img", package = "highlights.shiny"),
-  background_file = "blueprint.jpg",
+  background_path = system.file("app", "www", "source_img", package =
+    "highlights.shiny"),
+  background_file = "sky.jpg",
   sticker_width = 200,
-  sticker_row_size = 5,
+  sticker_row_size = 4,
   hex_scale_pct_width = 50,
   hex_scale_pct_height = NULL,
   hex_offset_vec = c(500, 200),
-  brightness = 250,
-  saturation = 140,
+  background_scale_pct_width = 100,
+  background_scale_pct_height = NULL,
+  background_offset_vec = c(100, 300),
+  brightness = 400,
+  saturation = 200,
   hue = 100,
   radius = 10,
-  sigma = 5
+  sigma = 5,
+  canvas_color = "white"
 )
 }
 \arguments{
 \item{hex_path}{directory for where hex png files are stored}
 
-\item{background_file}{image file for background of slide}
+\item{background_file}{image file for background of slide.
+If NULL, no background image file will be used.}
 
 \item{sticker_width}{width of each sticker (in pixels)}
 

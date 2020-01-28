@@ -26,7 +26,7 @@ mod_architecture_ui <- function(id) {
       
       # golem ----
       fullSlide(
-        div(align = "center", h1("Enter the Golem!", style = text_style)),
+        div(align = "center", h1("Enter the Golem!")),
         fullContainer(
           center = FALSE,
           fullRow(
@@ -45,7 +45,7 @@ mod_architecture_ui <- function(id) {
               ),
               div(
                 align = "center", 
-                h3("To find out more...", style = text_style),
+                h3("To find out more..."),
               ),
               h4(fontawesome::fa("calendar"), "See Colin Faye's upcoming talk this Wednesday! (2020-01-29 2:15 PM)"),
               h4("Shiny Developer Series Episode 2:", a(href = "https://shinydevseries.com/ep2", "shinydevseries.com/ep2")),
@@ -57,9 +57,9 @@ mod_architecture_ui <- function(id) {
                 tags$iframe(
                   src = "https://connect.thinkr.fr/hexmake/",
                   #src = "https://rpodcast.shinyapps.io/shinylego/", 
-                  height = 600, 
-                  width = 800
-                  #style="-webkit-transform:scale(0.5);-moz-transform-scale(0.5);")
+                  height = 500, 
+                  width = 700,
+                  style="-webkit-transform:scale(0.8);-moz-transform-scale(0.8);"
                 ),
                 p("Golem in the wild!", a(href = "https://connect.thinkr.fr/hexmake", "connect.thinkr.fr/hexmake"))
               )
@@ -71,7 +71,7 @@ mod_architecture_ui <- function(id) {
       # tidymodules ----
       fullSlide(
         center = FALSE,
-        div(align = "center", h1("Announcing tidymodules!", style = text_style)),
+        div(align = "center", h1("Announcing tidymodules!")),
         fullContainer(
           center = FALSE,
           fullRow(
@@ -84,6 +84,7 @@ mod_architecture_ui <- function(id) {
                 )
               ),
               shiny::tableOutput(ns("tidymodules_features"))
+              
             )
             
           )
@@ -111,10 +112,10 @@ mod_architecture_server <- function(input, output, session){
     df <- tibble::tribble(
       ~Feature, ~tidymodules, ~`conventional modules`,
       "Programming Style", "R6 OOP", "Functional",
-      "Namespace Management", "Automatic/generated<br>Group<br>ID-based lookup", "User manually defines & matches namespace ID between UI and server",
-      "Module Communication", "New input/output port structure inside modules\nConnecting ports using tidy operators\nAutomatic network diagram", "functional parameters passing in callModule()\nChallenging to manage complex applications with many modules",
-      "Inheritance", "Class inheritance\nPort inheritance for nested modules", "NA",
-      "Session management", "Multiple strategies for managing shiny user sessions\nCaching of modules", "NA"
+      "Namespace Management", "Automatic/generated; Group; ID-based lookup", "User manually defines & matches namespace ID between UI and server",
+      "Module Communication", "New input/output port structure inside modules; Connecting ports using tidy operators; Automatic network diagram", "functional parameters passing in callModule()\nChallenging to manage complex applications with many modules",
+      "Inheritance", "Class inheritance; Port inheritance for nested modules", "NA",
+      "Session management", "Multiple strategies for managing shiny user sessions; Caching of modules", "NA"
     )
     
     as.data.frame(df)

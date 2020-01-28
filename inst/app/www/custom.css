@@ -1,0 +1,16 @@
+body {
+ font-family: Ubuntu;
+ font-size: 2.8em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #000000;
+  font-family: Ubuntu;
+  font-size: large;
+}
+
+p, li {
+  color: #000000;
+  font-family: Ubuntu;
+  font-size: large;
+}

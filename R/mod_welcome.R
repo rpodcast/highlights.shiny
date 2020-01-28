@@ -34,7 +34,7 @@ mod_welcome_ui <- function(id){
       h2("Statistician / Podcaster / ", fontawesome::fa("r-project", fill = "stellblue"), "Enthusiast"),
       rep_br(2),
       h2("rstudio::conf 2020"),
-      rep_br(7),
+      rep_br(3),
       h2(fontawesome::fa("twitter"), a(href = "https://twitter.com/thercast", "@thercast")),
       h2(fontawesome::fa("microphone"), a(href = "https://r-podcast.org", "r-podcast.org")),
       h2(fontawesome::fa("tv"), a(href = "https://shinydevseries.com", "shinydevseries.com")),
@@ -69,9 +69,10 @@ mod_welcome_server <- function(input, output, session){
   
   output$bg <- renderImage({
     w$show()
-    tmpfile <- title_background(sticker_width = 400, 
+    tmpfile <- title_background(background_file = NULL,
+                                sticker_width = 400, 
                                 hex_scale_pct_width = 70, 
-                                hex_offset_vec = c(1200, 550)) %>%
+                                hex_offset_vec = c(1350, 50)) %>%
       image_write(tempfile(fileext='png'), format = 'png')
     
     # Return a list

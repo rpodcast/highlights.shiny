@@ -19,7 +19,7 @@
 mod_shiny_intro_ui <- function(id){
   ns <- NS(id)
   
-  text_style <- "font-weight: bold"
+
   
   tagList(
     fullSection(
@@ -39,7 +39,7 @@ mod_shiny_intro_ui <- function(id){
                 )
               ),
               rep_br(2),
-              h3(glue::glue("{n_packages} packages on CRAN authored outside of RStudio use or extend Shiny!", n_packages = nrow(shiny_rev_db)), style = text_style)
+              h3(glue::glue("{n_packages} packages on CRAN authored outside of RStudio use or extend Shiny!", n_packages = nrow(shiny_rev_db)))
             ),
             fullColumn(
               plotOutput(ns("package_chart"))
@@ -51,7 +51,7 @@ mod_shiny_intro_ui <- function(id){
         center = TRUE,
         div(align = "center", h1("Keeping up?")),
         p("Clearly the community around Shiny has grown immensely ..."),
-        img(src = "https://media.giphy.com/media/9rhNvnUJCEQpa2xCj8/giphy.gif", style="width:800px;height:600px;"),
+        img(src = "https://media.giphy.com/media/9rhNvnUJCEQpa2xCj8/giphy.gif", style="width:1000px;height:800px;"),
         h3("How can we keep up and discover these new packages, apps, and more?")
       ),
       fullSlide(
@@ -70,14 +70,14 @@ mod_shiny_intro_ui <- function(id){
             ),
             fullColumn(
               #https://media.giphy.com/media/dBNBKXIknaXNtK9lGQ/giphy.gif
-              img(src = "https://media.giphy.com/media/dBNBKXIknaXNtK9lGQ/giphy.gif", style="width:600px;height:400px;")
+              img(src = "https://media.giphy.com/media/dBNBKXIknaXNtK9lGQ/giphy.gif", style="width:600px;height:600px;")
             )
           )
         )
       ),
       fullSlide(
         center = TRUE,
-        h1("Idea: Shiny Developer Series!"),
+        h1("Shiny Developer Series!"),
         fullContainer(
           fullRow(
             fullColumn(
@@ -85,7 +85,8 @@ mod_shiny_intro_ui <- function(id){
               h3(tags$a(href = "https://shinydevseries.com", "shinydevseries.com"))
             ),
             fullColumn(
-              h2("Let's explore some of the awesome contributions from these brilliant authors and more!")
+              h3("Partnership with RStudio's very own Curtis Kephart", a(href = "https://twitter.com/EconomiCurtis", "@EconomiCurtis")),
+              h3("Let's explore contributions from these brilliant authors and more!")
             )
           )
         )

@@ -3,12 +3,11 @@
 app_ui <- function() {
   
   sections.color = c(
-    "#C3F3EC",
-    "#ccf2ff",
-    "#ccf2ff",
-    "#ccf2ff",
-    "#ccf2ff",
-    "#ccf2ff"
+    "#FFFFFF",
+    "#FFFFFF",
+    "#FFFFFF",
+    "#FFFFFF",
+    "#FFFFFF"
   )
   
   my_options <- list(
@@ -32,7 +31,6 @@ app_ui <- function() {
         "Discovery" = "discover",
         "Architecture" = "dev",
         "UI/UX" = "ui_ux",
-        "Extending" = "extend",
         "The Future" = "shiny_future"
       ),
     
@@ -47,9 +45,9 @@ app_ui <- function() {
 #' @import shiny
 golem_add_external_resources <- function(){
   
-  # addResourcePath(
-  #   'www', system.file('app', 'www', package = 'highlights.shiny')
-  # )
+  addResourcePath(
+    'www', system.file('app', 'www', package = 'highlights.shiny')
+  )
  
   tags$head(
     golem::activate_js(),
@@ -57,8 +55,10 @@ golem_add_external_resources <- function(){
     # Add here all the external resources
     # If you have a custom.css in the inst/app/www
     # Or for example, you can add shinyalert::useShinyalert() here
-    #tags$link(rel="stylesheet", type="text/css", href="www/custom.css")
-    waiter::use_waiter()
+    
+    tags$link(rel="stylesheet", type="text/css", href="www/custom.css"),
+    waiter::use_waiter(),
+    shinyFeedback::useShinyFeedback()
     
   )
 }

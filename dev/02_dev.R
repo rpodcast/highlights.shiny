@@ -29,6 +29,8 @@ usethis::use_package("ggplot2")
 usethis::use_package("lubridate")
 usethis::use_package("waiter")
 usethis::use_package("shinyFeedback")
+usethis::use_package("shinyWidgets")
+usethis::use_package("shinyjqui")
 usethis::use_package("rsvg")
 usethis::use_pipe()
 

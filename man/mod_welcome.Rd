@@ -7,7 +7,7 @@
 \usage{
 mod_welcome_ui(id)
 
-mod_welcome_server(input, output, session)
+mod_welcome_server(input, output, session, use_file = FALSE)
 }
 \arguments{
 \item{id}{shiny id}

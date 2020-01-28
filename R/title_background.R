@@ -33,7 +33,8 @@ title_background <- function(hex_path = system.file("app", "www", "img", package
                              hue = 100,
                              radius = 10,
                              sigma = 5,
-                             canvas_color = "white") {
+                             canvas_color = "white",
+                             export_image = FALSE) {
   
   #sticker_files <- fs::dir_ls(hex_path, glob = "*.png")
   sticker_files <- fs::dir_ls(hex_path)
@@ -166,6 +167,11 @@ title_background <- function(hex_path = system.file("app", "www", "img", package
     final_res <- image_composite(bg_image, 
                                  image_scale(hex_panel, geometry_size_percent(width = hex_scale_pct_width, height = hex_scale_pct_height)), 
                                  offset = geometry_point(hex_offset_vec[1], hex_offset_vec[2]))
+  }
+  
+  if (export_image) {
+    image_write(final_res, path = fs::path(background_path, "title_slide_finished.png"))
+    message("wrote an image file")
   }
   
   return(final_res)

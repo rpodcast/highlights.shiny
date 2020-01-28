@@ -8,7 +8,7 @@ app_server <- function(input, output,session) {
   #   #help_dir = system.file("app", "www", package = "highlights.shiny")
   # )
   
-  callModule(mod_welcome_server, "welcome_ui_1")
+  callModule(mod_welcome_server, "welcome_ui_1", use_file = TRUE)
   callModule(mod_shiny_intro_server, "shiny_intro_ui_1")
   callModule(mod_architecture_server, "architecture_ui_1")
   callModule(mod_ui_ux_server, "ui_ux_ui_1")

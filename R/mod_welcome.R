@@ -61,7 +61,7 @@ mod_welcome_ui <- function(id){
 #' @export
 #' @keywords internal
     
-mod_welcome_server <- function(input, output, session){
+mod_welcome_server <- function(input, output, session, use_file = FALSE){
   ns <- session$ns
   
   # establish waiter
@@ -69,14 +69,24 @@ mod_welcome_server <- function(input, output, session){
   
   output$bg <- renderImage({
     w$show()
-    tmpfile <- title_background(background_file = NULL,
-                                sticker_width = 400, 
-                                hex_scale_pct_width = 70, 
-                                hex_offset_vec = c(1350, 50)) %>%
-      image_write(tempfile(fileext='png'), format = 'png')
     
-    # Return a list
-    list(src = tmpfile, contentType = "image/png")
+    if (use_file) {
+      message("using existing image file")
+      background_path = system.file("app", "www", "source_img", package = "highlights.shiny")
+      img_file <- "title_slide_finished.png"
+      res <- list(src = file.path(background_path, img_file), contentType = 'image/png')
+    } else {
+      tmpfile <- title_background(background_file = NULL,
+                                  sticker_width = 400, 
+                                  hex_scale_pct_width = 70, 
+                                  hex_offset_vec = c(1350, 50)) %>%
+        image_write(tempfile(fileext='png'), format = 'png')
+      
+      # Return a list
+      res <- list(src = tmpfile, contentType = "image/png")
+    }
+    
+    return(res)
   })
 }
     

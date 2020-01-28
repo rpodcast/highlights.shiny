@@ -22,7 +22,8 @@ title_background(
   hue = 100,
   radius = 10,
   sigma = 5,
-  canvas_color = "white"
+  canvas_color = "white",
+  export_image = FALSE
 )
 }
 \arguments{

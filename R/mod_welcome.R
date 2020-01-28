@@ -17,8 +17,8 @@
 mod_welcome_ui <- function(id){
   ns <- NS(id)
   
-  text_style <- "color:#000000; font-weight: bold"
-  contact_style <- "color:#000000; font-weight: bold"
+  #text_style <- "color:#000000; font-weight: bold"
+  #contact_style <- "color:#000000; font-weight: bold"
   tagList(
     
     # title page ----
@@ -26,22 +26,22 @@ mod_welcome_ui <- function(id){
       outputId = ns("bg"),
       menu = "intro",
       center = TRUE,
-      h1("Reaping the Benefits of the Shiny Community", style = text_style),
+      h1("Reaping the Benefits of the Shiny Community"),
       h2("(and how you can help!)"),
       rep_br(1),
       #h1("Highlights from the ", shiny::img(src = system.file("app", "www", "img", "shiny.png", package = "highlights.shiny"), alt = ""), "Community!"),
-      h2("Eric Nantz", style = contact_style),
-      h2("Statistician / Podcaster / ", fontawesome::fa("r-project", fill = "stellblue"), "Enthusiast", style = contact_style),
+      h2("Eric Nantz"),
+      h2("Statistician / Podcaster / ", fontawesome::fa("r-project", fill = "stellblue"), "Enthusiast"),
       rep_br(2),
-      h2("rstudio::conf 2020", style = contact_style),
+      h2("rstudio::conf 2020"),
       rep_br(7),
-      h2(fontawesome::fa("twitter"), a(href = "https://twitter.com/thercast", "@thercast"), style = "font-weight: bold"),
-      h2(fontawesome::fa("microphone"), a(href = "https://r-podcast.org", "r-podcast.org"), style = "font-weight: bold"),
-      h2(fontawesome::fa("tv"), a(href = "https://shinydevseries.com", "shinydevseries.com"), style = "font-weight: bold"),
-      h2(fontawesome::fa("github"), a(href = "https://github.com/rpodcast", "github.com/rpodcast"), style = "font-weight: bold"),
+      h2(fontawesome::fa("twitter"), a(href = "https://twitter.com/thercast", "@thercast")),
+      h2(fontawesome::fa("microphone"), a(href = "https://r-podcast.org", "r-podcast.org")),
+      h2(fontawesome::fa("tv"), a(href = "https://shinydevseries.com", "shinydevseries.com")),
+      h2(fontawesome::fa("github"), a(href = "https://github.com/rpodcast", "github.com/rpodcast")),
       
       
-    ),
+    )
     # pageSectionPlot(
     #   outputId = ns("bg"),
     #   menu = "intro",

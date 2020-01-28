@@ -29,12 +29,14 @@ Imports:
     rsvg,
     shinyWidgets,
     shinyjqui,
-    shinyalert
+    shinyalert,
+    fontawesome (>= 0.1.0)
 RoxygenNote: 7.0.2
 URL: https://github.com/rpodcast/highlights.shiny
 BugReports: https://github.com/rpodcast/highlights.shiny/issues
-Remotes: 
-    RinteRface/fullPage
+Remotes:  
+    RinteRface/fullPage,
+    rstudio/fontawesome
 Roxygen: list(markdown = TRUE)
 Suggests: 
     cranly,

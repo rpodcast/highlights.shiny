@@ -78,7 +78,10 @@ mod_future_ui <- function(id){
             )
           )
         )
-      )
+      ),
+      
+      # call to action
+      
     )
   )
 }

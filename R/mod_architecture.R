@@ -79,11 +79,17 @@ mod_architecture_ui <- function(id) {
               h4("{tidymodules} builds upon shiny modules using R6 to provide a new object-oriented programming (OOP) approach for module development:"),
               list_to_li(
                 c(
+                  "Authored by Mustapha Larbaouri & Xiao Ni (Novartis)",
                   "New module interface using input/output ports",
                   "Tidy operators for handling cross-module communication"
                 )
               ),
-              shiny::tableOutput(ns("tidymodules_features"))
+              shiny::tableOutput(ns("tidymodules_features")),
+              div(
+                align = "center",
+                h2("Find out more at ", a(href = "https://bit.ly/tidymodules", "bit.ly/tidymodules")),
+                h2("Example app: ", a(href = "https://tidymodules.shinyapps.io/1_simple_addition/", "tidymodules.shinyapps.io/1_simple_addition"))
+              )
               
             )
             

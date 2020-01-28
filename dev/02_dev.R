@@ -32,6 +32,7 @@ usethis::use_package("shinyFeedback")
 usethis::use_package("shinyWidgets")
 usethis::use_package("shinyjqui")
 usethis::use_package("rsvg")
+usethis::use_package("shinyalert")
 usethis::use_pipe()
 
 usethis::use_package("shinyhelper")

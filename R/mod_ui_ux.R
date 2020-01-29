@@ -58,22 +58,21 @@ mod_ui_ux_ui <- function(id){
               )
             )
           ),
-          fullRow(
+          #fullRow(
             div(
               align = "center",
               h4(a(href = "https://rinterface.com", "rinterface.com")),
               h4(a(href = "https://shinydevseries.com/ep4", "shinydevseries.com/ep4")),
-              h4(a(href = "https://shinydevseries.com/post/bs4dash-demo", "bs4Dash screencast"))
-              
-              
+              h4(a(href = "https://shinydevseries.com/post/bs4dash-demo", "bs4Dash screencast")),
+              h4(a(href = "https://rpodcast.shinyapps.io/rsnippets"), "Residual Snippets {shinyMobile} app!")
             )
-          )
+          #)
         )
       ),
       
       # shinyWidgets ----
       fullSlide(
-        div(align = "center", h1("ShinyWidgets", style = text_style)),
+        div(align = "center", h1("ShinyWidgets")),
         fullContainer(
           center = FALSE,
           fullRow(

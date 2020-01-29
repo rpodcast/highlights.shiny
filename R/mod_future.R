@@ -81,7 +81,55 @@ mod_future_ui <- function(id){
       ),
       
       # call to action
+      fullSlide(
+        div(
+          align = "center",
+          h1("How about ... a Shinyverse?")
+        ),
+        fullContainer(
+          center = TRUE,
+          fullRow(
+            div(
+              align = "center",
+              h3("Imagine a curated source of the packages and applications built by the Shiny community, for the Shiny community!"),
+            )
+          ),
+          fullRow(
+            center = TRUE,
+            fullColumn(
+              list_to_p(
+                c("Interactive gallery with dynamic filtering, searching, and dynamic results",
+                  "Each resource has a vignette, article, or example application readily available",
+                  "Encourage collaboration and sharing knowledge",
+                  "Links to resources created by authors and developers",
+                  "Crowd-sourced effort!"
+                )
+              )
+            )
+          )
+        ),
+        div(
+          align = "center",
+          h1("Let's create a Shinyverse together!")
+        )
+      ),
       
+      # Wrap up
+      fullSlide(
+        center = TRUE,
+        div(
+          align = "center",
+          h1("Watch this space!"),
+          h2("Shiny Developer Series continues in 2020"),
+          h2("Estabilish a new platform for a curated Shinyverse")
+        ),
+        img(src = "https://media.giphy.com/media/K5xgW19wJ5eP6/giphy.gif", style="width:600px;height:400px;"),
+        div(
+          align = "center",
+          h4("Poster app deployed at ", a(href = "https://rpodcast.shinyapps.io/highlights-shiny", "rpodcast.shinyapps.ip/highlights-shiny")),
+          h4("Source code available at ", a(href = "https://github.com/rpodcast/highlights.shiny", "github.com/rpodcast/highlights.shiny"))
+        )
+      )
     )
   )
 }

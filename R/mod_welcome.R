@@ -63,6 +63,11 @@ mod_welcome_ui <- function(id){
     
 mod_welcome_server <- function(input, output, session, use_file = FALSE){
   ns <- session$ns
+  delete_flag <- TRUE
+  
+  if (use_file) {
+    delete_flag <- FALSE
+  }
   
   # establish waiter
   w <- waiter::Waiter$new(id = ns("bg"))
@@ -87,7 +92,7 @@ mod_welcome_server <- function(input, output, session, use_file = FALSE){
     }
     
     return(res)
-  })
+  }, deleteFile = delete_flag)
 }
     
 ## To be copied in the UI
